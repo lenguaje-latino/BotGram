@@ -11,12 +11,15 @@ funcion mensajes()
                 fin
         fin
         si matches[1] == "comandos"
+                escribir("ejecutando comandos...")
                 comandos = redis->smiembros(com, "custom:".msg->chat->id.":scomando")
-                si comandos
+                escribir("comandos: " . comandos)
+                //Descomenta la lineas siguientes cuando veas que contiene comandos
+                /*si comandos
                         desde (i=0; i<lista->longitud(comandos); i++)
                                 imprimir(comandos[i])
                         fin
-                fin
+                fin*/
         fin
         si matches[1] == "bienvenida"
                 si ! usuario_es_admin(msg->chat->id, msg->de->id)
